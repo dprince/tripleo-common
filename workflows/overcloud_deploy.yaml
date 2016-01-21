@@ -1,0 +1,26 @@
+---
+version: '2.0'
+name: tripleo.overcloud_deploy.v1
+description: TripleO Overcloud Deployment Workflows v1
+
+workflows:
+
+  # for a given Mistral environment this workflow will run Heat stack create
+  deploy:
+    type: direct
+
+    tasks:
+
+      stack_create:
+        action: tripleo.stack_create environments=<% env().environments %> container=<% env().container %> template=<% env().template %>
+
+
+  # for a given Mistral environment this workflow will run Heat stack validate
+  # to return the required stack parameters parameters
+  get_parameters:
+    type: direct
+
+    tasks:
+
+      stack_create:
+        action: tripleo.stack_create environments=<% env().environments %> container=<% env().container %> template=<% env().template %>
