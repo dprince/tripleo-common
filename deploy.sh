@@ -1,3 +1,4 @@
+rm -Rf /usr/lib/python2.7/site-packages/tripleo_common*
 python setup.py install
 systemctl restart openstack-mistral-executor
 systemctl restart openstack-mistral-engine
